@@ -1,0 +1,24 @@
+body {
+    background-image: url("../img/背景画像.jpg");
+}
+.container {
+    max-width: 1000px;
+}
+h1 {
+    text-align: center;
+    background: #fab0b0;
+    padding: 0.5em;
+    color: white;
+    border-radius: 0.5em;
+    font-family: "";
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height 60px;
+}
+
+.copyright {
+    text-align: center;
+}

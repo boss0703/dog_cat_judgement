@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h1>犬猫判別サイト</h1>
+<form method="post" action="/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="custom-file">
+            {{ form.image }}
+            {{ form.image.label_tag }}
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">判定</button>
+    <button type="reset" class="btn btn-secondary">キャンセル</button>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+<script>
+  bsCustomFileInput.init();
+</script>
+{% endblock %}
