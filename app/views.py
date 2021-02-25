@@ -15,6 +15,11 @@ def index(request):
 
             image_file.save()
             form.save()
+
+            from app.judgement import judgement
+            value = judgement(request.FILES['image'])
+            print(value)
+
             return render(request, 'app/result.html',)
     else:
         form = ImageFileForm()
