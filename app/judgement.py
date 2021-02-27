@@ -6,18 +6,19 @@ from dog_cat_judgement.settings import BASE_DIR
 import numpy as np
 
 print(str(BASE_DIR))
-model = load_model(str(BASE_DIR) + '/app/model.h5')
+model = load_model(str(BASE_DIR) + '/app/model_keras.h5')
 
 
-def judgement(Img):
-    img_data = load_img(Img, target_size=(128, 128))
+def judgement(path):
+    # img_data = load_img(path, target_size=(224, 224))
+    img_data = load_img(path, target_size=(152, 152))
     x_test = np.array([img_to_array(img_data)])
     true_labels = ["None"]
     x_test_preproc = preprocess_input(x_test.copy()) / 255.
     probs = model.predict(x_test_preproc)
 
     img_gen = ImageDataGenerator(
-        rescale=1/255.,
+        rescale=1. / 255,
         shear_range=0.1,
         zoom_range=0.1,
         horizontal_flip=True,
