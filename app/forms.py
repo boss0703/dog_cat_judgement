@@ -8,5 +8,5 @@ class ImageFileForm(forms.ModelForm):
         model = ImageFileModel
         fields = ('image',)
         widgets = {
-            'image': forms.FileInput(attrs={'class': 'custom-file-input'})
+            'image': forms.FileInput(attrs={'class': 'custom-file-input', 'onchange': 'previewImage(this);'})
         }

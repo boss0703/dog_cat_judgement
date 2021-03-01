@@ -1,8 +1,10 @@
 {% extends 'app/base.html' %}
 {% block content %}
 <h1>犬猫判別サイト</h1>
-<img src="../../../media/{{ image }}">
-<p>この画像は<span>{{ result }}%{{ animal }}</span>です！！</p>
+<div class="result_img">
+    <img src="../../../media/{{ image }}">
+</div>
+<p class="result">結果：<span>『{{ animal }}』{{ result }}%</span></p>
 <form>
     <button class="btn btn-primary" type="button" onclick="history.back()">前に戻る</button>
 </form>

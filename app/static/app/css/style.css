@@ -1,3 +1,6 @@
+/*
+    common
+*/
 body {
     background-image: url("../img/背景画像.jpg");
 }
@@ -18,7 +21,23 @@ footer {
     width: 100%;
     height 60px;
 }
-
 .copyright {
     text-align: center;
+}
+/*
+    result
+*/
+.result_img {
+    text-align: center;
+}
+.result_img img {
+    border-radius: 1em;
+}
+.result {
+    font-size: 36px;
+    background-color: white;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0.5em;
 }
