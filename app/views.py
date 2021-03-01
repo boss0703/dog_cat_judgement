@@ -22,10 +22,14 @@ def index(request):
             from app.judgement import judgement
             # value = judgement(request.FILES['image'])
             path = Path(MEDIA_ROOT) / image_file.image.name
-            value = judgement(path)
-            print(value)
+            result = judgement(path)
 
-            return render(request, 'app/result.html',)
+            if result < 0.5:
+                context = {'result': round(100-result*100, 2), 'animal': '犬', 'image': image_file.image.name}
+            else:
+                context = {'result': round(result*100, 2), 'animal': '猫', 'image': image_file.image.name}
+
+            return render(request, 'app/result.html', context)
     else:
         form = ImageFileForm()
         return render(request, 'app/index.html', {'form': form})
