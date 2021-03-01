@@ -1,7 +1,9 @@
 {% extends 'app/base.html' %}
 {% block content %}
 <h1>犬猫判別サイト</h1>
-<img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;">
+<div class="preview_img">
+    <img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;">
+</div>
 <form method="post" action="/" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group">

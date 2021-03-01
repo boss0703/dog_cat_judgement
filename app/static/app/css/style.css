@@ -25,7 +25,19 @@ footer {
     text-align: center;
 }
 /*
-    result
+    index page
+*/
+.preview_img {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.preview_img img {
+    border-radius: 0.5em;
+}
+
+
+/*
+    result page
 */
 .result_img {
     text-align: center;
