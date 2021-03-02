@@ -3,7 +3,7 @@ from pathlib import Path
 from django.shortcuts import render
 from django.utils import timezone
 
-from app.forms import ImageFileForm
+from app.forms import ImageFileForm, ContactForm
 from app.models import ImageFileModel
 from dog_cat_judgement.settings import MEDIA_ROOT
 
@@ -33,3 +33,15 @@ def index(request):
     else:
         form = ImageFileForm()
         return render(request, 'app/index.html', {'form': form})
+
+
+def contact(request):
+    form = ContactForm()
+    if request.method == 'POST':
+        form = ContactForm(request.POST or None)
+        if form.is_valid():
+            form.send_email()
+            form = ImageFileForm()
+            return render(request, 'app/index.html', {'form': form})
+
+    return render(request, 'app/contact.html', {'form': form})

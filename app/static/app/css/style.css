@@ -1,6 +1,11 @@
 /*
     common
 */
+/*
+@font-face {
+
+}
+*/
 body {
     background-image: url("../img/背景画像.jpg");
 }
@@ -8,12 +13,14 @@ body {
     max-width: 1000px;
 }
 h1 {
+    font-size: 60px;
     text-align: center;
     background: #fab0b0;
     padding: 0.5em;
-    color: white;
+    color: #6c757d;
     border-radius: 0.5em;
-    font-family: "";
+    font-family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+    font-weight: bold;
 }
 footer {
     position: absolute;
@@ -24,17 +31,19 @@ footer {
 .copyright {
     text-align: center;
 }
+
 /*
     index page
 */
 .preview_img {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    height: 512px;
 }
 .preview_img img {
     border-radius: 0.5em;
+    max-height: 512px;
 }
-
 
 /*
     result page

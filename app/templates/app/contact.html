@@ -1,0 +1,10 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h1>犬猫判別サイト</h1>
+<h3>お問い合わせフォーム</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">送信</button>
+</form>
+{% endblock %}

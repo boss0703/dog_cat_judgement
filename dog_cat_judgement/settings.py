@@ -129,3 +129,14 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = Path(BASE_DIR) / 'media'
 MEDIA_URL = '/media/'
+
+# 問い合わせメールをログ表示
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# ローカル設定のインポート(本番環境では環境変数に設定する予定)
+if DEBUG:
+    try:
+        from .local_settings import *
+    except ImportError:
+        pass

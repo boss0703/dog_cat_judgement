@@ -2,9 +2,9 @@
 {% block content %}
 <h1>犬猫判別サイト</h1>
 <div class="preview_img">
-    <img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;">
+    <img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
 </div>
-<form method="post" action="/" enctype="multipart/form-data">
+<form method="POST" action="/" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group">
         <div class="custom-file">
