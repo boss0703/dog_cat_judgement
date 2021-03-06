@@ -10,7 +10,7 @@ from dog_cat_judgement.settings import MEDIA_ROOT
 
 def index(request):
     if request.method == 'POST':
-        form = ImageFileForm(request.POST or None)
+        form = ImageFileForm(request.POST, request.FILES or None)
         if form.is_valid():
             image_file = ImageFileModel()
             image_file.image = request.FILES['image']
@@ -30,6 +30,9 @@ def index(request):
                 context = {'result': round(result*100, 2), 'animal': '猫', 'image': image_file.image.name}
 
             return render(request, 'app/result.html', context)
+        else:
+            form = ImageFileForm()
+            return render(request, 'app/index.html', {'form': form})
     else:
         form = ImageFileForm()
         return render(request, 'app/index.html', {'form': form})
