@@ -13,7 +13,7 @@ body {
     max-width: 1000px;
 }
 h1 {
-    font-size: 60px;
+    font-size: 3.5em;
     text-align: center;
     background: #fab0b0;
     padding: 0.5em;
@@ -26,7 +26,7 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height 60px;
+    height: 4em;
 }
 .copyright {
     text-align: center;
@@ -38,7 +38,7 @@ footer {
 .preview_img {
     text-align: center;
     margin: 20px auto;
-    height: 512px;
+    height: 24em;
 }
 .preview_img img {
     border-radius: 0.5em;
