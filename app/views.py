@@ -10,7 +10,7 @@ from dog_cat_judgement.settings import MEDIA_ROOT
 
 def index(request):
     if request.method == 'POST':
-        form = ImageFileForm(request.POST, request.FILES or None)
+        form = ImageFileForm(request.POST or None, request.FILES)
         if form.is_valid():
             image_file = ImageFileModel()
             image_file.image = request.FILES['image']
