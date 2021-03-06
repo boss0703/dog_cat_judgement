@@ -8,9 +8,12 @@
 */
 body {
     background-image: url("../img/背景画像.jpg");
+    position: relative;
+
 }
 .container {
     max-width: 1000px;
+    padding-bottom: 4em;
 }
 h1 {
     font-size: 3.5em;
@@ -38,11 +41,11 @@ footer {
 .preview_img {
     text-align: center;
     margin: 20px auto;
-    height: 24em;
 }
 .preview_img img {
-    border-radius: 0.5em;
-    max-height: 512px;
+    border-radius: 1em;
+    height: 20em;
+    background-color: white;
 }
 
 /*
@@ -50,9 +53,11 @@ footer {
 */
 .result_img {
     text-align: center;
+    margin: 20px auto;
 }
 .result_img img {
     border-radius: 1em;
+    height: 20em;
 }
 .result {
     font-size: 36px;
