@@ -20,7 +20,6 @@ def index(request):
             form.save()
 
             from app.judgement import judgement
-            # value = judgement(request.FILES['image'])
             path = Path(MEDIA_ROOT) / image_file.image.name
             result = judgement(path)
 
