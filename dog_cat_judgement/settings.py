@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'dog_cat_judgement',
         'USER': 'keita',
         'PASSWORD': '',
-        'HOST': 'localhost',
+        'HOST': 'host',
         'PORT': '',
     }
 }
