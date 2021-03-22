@@ -13,7 +13,8 @@ def judgement(path):
     img_data = load_img(path, target_size=(224, 224))
     x_test = np.array([img_to_array(img_data)])
     x_test_preproc = preprocess_input(x_test.copy()) / 255.
-    probs = model.predict(x_test_preproc)
+    # probs = model.predict(x_test_preproc)
+    probs = np.array(model.predict_on_batch(x_test_preproc))
 
     img_gen = ImageDataGenerator(
         rescale=1. / 255,

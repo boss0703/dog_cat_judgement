@@ -29,7 +29,7 @@ DEBUG = True
 # ALLOWED_HOSTS = []
 
 # heroku用
-ALLOWED_HOSTS = ['dogcatjudgement.herokuapp.com',]
+ALLOWED_HOSTS = ['dogcatjudgement.herokuapp.com', '127.0.0.1', ]
 # Application definition
 
 INSTALLED_APPS = [
