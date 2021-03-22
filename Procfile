@@ -1,1 +1,1 @@
-web: gunicorn dog_cat_judgement.wsgi --logfile -
+web: gunicorn dog_cat_judgement.wsgi --log-file -
