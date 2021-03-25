@@ -20,11 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'mf(*rf=idge(9ollmp&kx0^4ze%*6mkxb@q$bk)(6o&=g-u_)s'
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = []
 
@@ -164,4 +161,5 @@ else:
     EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
     EMAIL_PORT = os.environ['EMAIL_PORT']
     EMAIL_USE_TLS = os.environ['EMAIL_USE_TLS']
+    SECRET_KEY = os.environ['SECRET_KEY']
 
