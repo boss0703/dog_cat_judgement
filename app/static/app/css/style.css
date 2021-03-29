@@ -1,70 +1,48 @@
-/*
-    common
-*/
-/*
-@font-face {
+@charset "UTF-8";
+/* common */
+html { height: 100%; }
 
-}
-*/
-html {
-    height: 100%;
-}
-body {
-    background-image: url("../img/背景画像.jpg");
-    position: relative;
-    height: 100%;
-}
-.container {
-    max-width: 1000px;
-    padding-bottom: 4em;
-    min-height: calc(90vh - 70px);
-}
-h1 {
-    font-size: 3.5vw;
-    text-align: center;
-    padding: 0.5em;
-    color: #e0c43b;
-    font-family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-    font-weight: bold;
-    font-style: italic;
-}
-footer {
-    width: 100%;
-    height: 50px;
-}
-.copyright {
-    text-align: center;
-}
+body { background-image: url("../img/背景画像.jpg"); position: relative; height: 100%; }
 
-/*
-    index page
-*/
-.preview_img {
-    text-align: center;
-    margin: 20px auto;
-}
-.preview_img img {
-    border-radius: 1em;
-    height: 20em;
-    background-color: white;
-}
+.container { width: 100%; max-width: 960px; padding-bottom: 4em; min-height: calc(90vh - 70px); padding-right: 10px; padding-left: 10px; }
 
-/*
-    result page
-*/
-.result_img {
-    text-align: center;
-    margin: 20px auto;
-}
-.result_img img {
-    border-radius: 1em;
-    height: 20em;
-}
-.result {
-    font-size: 36px;
-    background-color: white;
-    margin-top: 20px;
-    padding: 10px;
-    text-align: center;
-    border-radius: 0.5em;
-}
+h1 { font-size: 3.2vw; text-align: center; padding: 0.5em; color: #e0c43b; font-family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO"; font-weight: bold; font-style: italic; }
+
+footer { width: 100%; height: 50px; }
+
+.copyright { text-align: center; }
+
+/* index page */
+.preview_img { text-align: center; margin: 20px auto; }
+
+.preview_img img { border-radius: 1em; height: 20em; }
+
+/* result page */
+.result_img { text-align: center; margin: 20px auto; }
+
+.result_img img { border-radius: 1em; height: 20em; }
+
+.result { font-size: 36px; background-color: white; margin-top: 20px; padding: 10px; text-align: center; border-radius: 0.5em; }
+
+/** chart **/
+.progress-pie-chart { width: 200px; height: 200px; border-radius: 50%; background-color: #E5E5E5; position: relative; }
+
+.progress-pie-chart.gt-50 { background-color: #81CE97; }
+
+.ppc-progress { content: ""; position: absolute; border-radius: 50%; left: calc(50% - 100px); top: calc(50% - 100px); width: 200px; height: 200px; clip: rect(0, 200px, 200px, 100px); }
+
+.ppc-progress .ppc-progress-fill { content: ""; position: absolute; border-radius: 50%; left: calc(50% - 100px); top: calc(50% - 100px); width: 200px; height: 200px; clip: rect(0, 100px, 200px, 0); background: #81CE97; transform: rotate(60deg); }
+
+.gt-50 .ppc-progress { clip: rect(0, 100px, 200px, 0); }
+
+.gt-50 .ppc-progress .ppc-progress-fill { clip: rect(0, 200px, 200px, 100px); background: #E5E5E5; }
+
+.ppc-percents { content: ""; position: absolute; border-radius: 50%; left: calc(50% - 173.91304348px/2); top: calc(50% - 173.91304348px/2); width: 173.91304348px; height: 173.91304348px; background: #fff; text-align: center; display: table; }
+
+.ppc-percents span { display: block; font-size: 2.6em; font-weight: bold; color: #81CE97; }
+
+.pcc-percents-wrapper { display: table-cell; vertical-align: middle; }
+
+.progress-pie-chart { margin: 50px auto 0; }
+
+/*# sourceMappingURL=style.css.map */

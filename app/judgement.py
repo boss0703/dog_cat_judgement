@@ -5,6 +5,12 @@ from tensorflow.python.keras.preprocessing.image import load_img, img_to_array, 
 from dog_cat_judgement.settings import BASE_DIR
 import numpy as np
 
+# import tensorflow as tf
+# from keras import backend as keras
+#
+# # session error fixed
+# session = keras.Session()
+
 model = load_model(str(BASE_DIR) + '/app/model_cat_vs_dog.h5')
 
 
@@ -13,7 +19,10 @@ def judgement(path):
     img_data = load_img(path, target_size=(224, 224))
     x_test = np.array([img_to_array(img_data)])
     x_test_preproc = preprocess_input(x_test.copy()) / 255.
-    # probs = model.predict(x_test_preproc)
+
+    # # session error fixed
+    # with session.as_default():
+    #     with session.graph.as_default():
     probs = np.array(model.predict_on_batch(x_test_preproc))
 
     img_gen = ImageDataGenerator(

@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = []
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'app',
     'django_cleanup',
     'bootstrap4',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -162,3 +163,10 @@ else:
     EMAIL_USE_TLS = os.environ['EMAIL_USE_TLS']
     SECRET_KEY = os.environ['SECRET_KEY']
 
+# Sass/SCSS
+SASS_PROCESSOR_AUTO_INCLUDE = False
+SASS_PROCESSOR_ROOT = Path(BASE_DIR) / 'app' / 'static'
+SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r'^.+\.scss$'
+SASS_PRECISION = 8
+SASS_OUTPUT_STYLE = 'compact'
+SASS_TEMPLATE_EXTS = ['.html', '.haml']

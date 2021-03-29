@@ -24,9 +24,9 @@ def index(request):
             result = judgement(path)
 
             if result < 0.5:
-                context = {'result': round(100-result*100, 2), 'animal': '犬', 'image': image_file.image.name}
+                context = {'result': round(100-result*100, 1), 'animal': '犬', 'image': image_file.image.name}
             else:
-                context = {'result': round(result*100, 2), 'animal': '猫', 'image': image_file.image.name}
+                context = {'result': round(result*100, 1), 'animal': '猫', 'image': image_file.image.name}
 
             return render(request, 'app/result.html', context)
         else:

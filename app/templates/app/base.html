@@ -2,11 +2,13 @@
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
 {% load static %}
+{% load sass_tags %}
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/style.css' %}">
+    <link rel="stylesheet" href="{% sass_src 'app/css/style.scss' %}" type="text/css">
     <title>dags vs cats judgement AI</title>
 </head>
 <body>

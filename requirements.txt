@@ -9,7 +9,11 @@ dj-database-url
 Django==3.1.4
 django-bootstrap4==2.3.1
 django-cleanup==5.1.0
+rjsmin==1.1.0
+rcssmin==1.0.6
+django-compressor==2.4
 django-heroku==0.3.1
+django-sass-processor==0.8.2
 flatbuffers==1.12
 gast==0.3.3
 google-auth==1.27.0
@@ -22,6 +26,7 @@ idna==2.10
 importlib-metadata==2.1.1
 Keras==2.4.3
 Keras-Preprocessing==1.1.2
+libsass==0.20.1
 Markdown==3.3.3
 numpy==1.19.5
 oauthlib==3.1.0
