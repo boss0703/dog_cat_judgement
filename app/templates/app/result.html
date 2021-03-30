@@ -9,15 +9,7 @@
 
 <link rel="stylesheet" href="{% static 'app/css/circle.css' %}">
 
-<div class="chart">
-    <div class="c100 p50 big">
-        <span>{{ result }}%</span>
-        <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-        </div>
-    </div>
-</div>
+<canvas id="myChart"></canvas>
 <form>
     <button class="btn btn-primary" type="button" onclick="history.back()">前に戻る</button>
 </form>
