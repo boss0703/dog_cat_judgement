@@ -5,13 +5,15 @@
 <div class="result_img">
     <img src="/media/{{ image }}">
 </div>
-<p class="result">結果：<span>『{{ animal }}』{{ result }}%</span></p>
-
 <link rel="stylesheet" href="{% static 'app/css/circle.css' %}">
-
-<canvas id="myChart"></canvas>
+<div class="canvas_wrapper">
+    <canvas id="chart-area" width="320" height="240"></canvas>
+</div>
+<input type="hidden" id="animal" value="{{ animal }}">
+<input type="hidden" id="result" value="{{ result }}">
 <form>
     <button class="btn btn-primary" type="button" onclick="history.back()">前に戻る</button>
 </form>
-<script type="text/javascript" src="/static/app/js/script.js"></script>
+<script type="text/javascript" src="/static/app/js/script.js" defer></script>
+<script src="/static/app/js/plugin.js" defer></script>
 {% endblock %}

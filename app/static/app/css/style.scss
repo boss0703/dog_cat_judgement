@@ -21,7 +21,7 @@ h1 {
     font-size: 3.2vw;
     text-align: center;
     padding: 0.5em;
-    color: #e0c43b;
+    color: #adadff;
     font-family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
     font-weight: bold;
     font-style: italic;
@@ -124,4 +124,42 @@ $size: 200px;
 
 .progress-pie-chart {
   margin: 50px auto 0;
+}
+
+/** add **/
+.label-box {
+  /* box-sizing はプラグインで padding-top を付与したときに height を変えないようにするために付けています */
+  box-sizing: border-box;
+  height: 240px;
+  width: 320px;
+  /* 縦横中央揃え */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* グラフ上に配置 */
+  margin-top: -240px;
+}
+
+/* タイトル、値 */
+.label-box .label {
+  color: #636363;
+  text-align: center;
+}
+.label-box .label .chart-title {
+  font-size: 40px;
+  letter-spacing: .05em;
+  margin-bottom: 3px;
+  padding-top: 13px;
+}
+.label-box .label .chart-value {
+  font-size: 60px;
+  line-height: 1em;
+}
+.label-box .label .chart-value .per {
+  font-size: 20px;
+}
+
+.canvas_wrapper{
+	width:320px;
+	margin:0 auto;
 }
