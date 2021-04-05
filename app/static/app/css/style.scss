@@ -43,7 +43,9 @@ footer {
 }
 .preview_img img {
     border-radius: 1em;
-    height: 20em;
+    max-width: 90%;
+    height: auto;
+    max-height: 20em;
 }
 
 /*
@@ -55,7 +57,9 @@ footer {
 }
 .result_img img {
     border-radius: 1em;
-    height: 20em;
+    max-width: 90%;
+    height: auto;
+    max-height: 20em;
 }
 .result {
     font-size: 36px;
@@ -146,20 +150,26 @@ $size: 200px;
   text-align: center;
 }
 .label-box .label .chart-title {
-  font-size: 40px;
+  font-size: 3em;
   letter-spacing: .05em;
   margin-bottom: 3px;
   padding-top: 13px;
 }
 .label-box .label .chart-value {
-  font-size: 60px;
+  font-size: 2.5em;
   line-height: 1em;
 }
 .label-box .label .chart-value .per {
-  font-size: 20px;
+  font-size: 0.5em;
 }
-
 .canvas_wrapper{
 	width:320px;
 	margin:0 auto;
+}
+
+/** タブレットサイズ **/
+@media screen and (max-width:768px) {
+    h1{
+        font-size: 6.2vw;
+    }
 }
