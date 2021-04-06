@@ -26,6 +26,9 @@ h1 {
     font-weight: bold;
     font-style: italic;
 }
+h3 {
+    font-style: italic;
+}
 footer {
     width: 100%;
     height: 50px;
@@ -73,101 +76,101 @@ footer {
 /** chart **/
 $size: 200px;
 @mixin circle($size) {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  left: calc(50% - #{$size/2});
-  top: calc(50% - #{$size/2});
-  width: $size;
-  height: $size;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - #{$size/2});
+    top: calc(50% - #{$size/2});
+    width: $size;
+    height: $size;
 }
 
 .progress-pie-chart {
-  width: $size;
-  height: $size;
-  border-radius: 50%;
-  background-color: #E5E5E5;
-  position: relative;
-  &.gt-50 {
-    background-color: #81CE97;
-  }
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background-color: #E5E5E5;
+    position: relative;
+    &.gt-50 {
+        background-color: #81CE97;
+    }
 }
 .ppc-progress {
-  @include circle($size);
-  clip: rect(0, $size, $size, #{$size/2});
-  .ppc-progress-fill {
-    @include circle($size);
-    clip: rect(0, #{$size/2}, $size, 0);
-    background: #81CE97;
-    transform: rotate(60deg);
-  }
-  .gt-50 & {
-    clip: rect(0, #{$size/2}, $size, 0);
+@include circle($size);
+clip: rect(0, $size, $size, #{$size/2});
     .ppc-progress-fill {
-      clip: rect(0, $size, $size, #{$size/2});
-      background: #E5E5E5;
+        @include circle($size);
+        clip: rect(0, #{$size/2}, $size, 0);
+        background: #81CE97;
+        transform: rotate(60deg);
     }
-  }
+    .gt-50 & {
+        clip: rect(0, #{$size/2}, $size, 0);
+        .ppc-progress-fill {
+            clip: rect(0, $size, $size, #{$size/2});
+            background: #E5E5E5;
+        }
+    }
 }
 .ppc-percents {
-  @include circle(#{$size/1.15});
-  background: #fff;
-  text-align: center;
-  display: table;
-  span {
-    display: block;
-    font-size: 2.6em;
-    font-weight: bold;
-    color: #81CE97;
-  }
+    @include circle(#{$size/1.15});
+    background: #fff;
+    text-align: center;
+    display: table;
+    span {
+        display: block;
+        font-size: 2.6em;
+        font-weight: bold;
+        color: #81CE97;
+    }
 }
 .pcc-percents-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .progress-pie-chart {
-  margin: 50px auto 0;
+    margin: 50px auto 0;
 }
 
-/** add **/
+/** chartlabel **/
 .label-box {
-  /* box-sizing はプラグインで padding-top を付与したときに height を変えないようにするために付けています */
-  box-sizing: border-box;
-  height: 240px;
-  width: 320px;
-  /* 縦横中央揃え */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* グラフ上に配置 */
-  margin-top: -240px;
+    /* box-sizing はプラグインで padding-top を付与したときに height を変えないようにするために付けています */
+    box-sizing: border-box;
+    height: 240px;
+    width: 320px;
+    /* 縦横中央揃え */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* グラフ上に配置 */
+    margin-top: -240px;
 }
 
 /* タイトル、値 */
 .label-box .label {
-  color: #636363;
-  text-align: center;
+    color: #636363;
+    text-align: center;
 }
 .label-box .label .chart-title {
-  font-size: 3em;
-  letter-spacing: .05em;
-  margin-bottom: 3px;
-  padding-top: 13px;
+    font-size: 3em;
+    letter-spacing: .05em;
+    margin-bottom: 3px;
+    padding-top: 13px;
 }
 .label-box .label .chart-value {
-  font-size: 2.5em;
-  line-height: 1em;
+    font-size: 2.5em;
+    line-height: 1em;
 }
 .label-box .label .chart-value .per {
-  font-size: 0.5em;
+    font-size: 0.5em;
 }
 .canvas_wrapper{
 	width:320px;
 	margin:0 auto;
 }
 
-/** タブレットサイズ **/
+/** tablet size **/
 @media screen and (max-width:768px) {
     h1{
         font-size: 6.2vw;
