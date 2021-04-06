@@ -8,6 +8,15 @@ from app.forms import ImageFileForm, ContactForm
 from app.models import ImageFileModel
 from dog_cat_judgement.settings import MEDIA_ROOT
 
+from logging import getLogger, StreamHandler, DEBUG
+
+logger = getLogger(__name__)
+handler = StreamHandler()
+handler.setLevel(DEBUG)
+logger.setLevel(DEBUG)
+logger.addHandler(handler)
+logger.propagate = False
+
 
 def index(request):
     if request.method == 'POST':
@@ -22,12 +31,17 @@ def index(request):
 
             from app.judgement import judgement
             path = Path(MEDIA_ROOT) / image_file.image.name
-            result = judgement(path)
-
-            if result < 0.5:
-                context = {'result': round(100-result*100, 1), 'animal': '犬', 'image': image_file.image.name}
-            else:
-                context = {'result': round(result*100, 1), 'animal': '猫', 'image': image_file.image.name}
+            context = {}
+            try:
+                logger.debug("start judge dogs vs cats")
+                result = judgement(path)
+                logger.debug("end judge dogs vs cats")
+                if result < 0.5:
+                    context = {'result': round(100 - result * 100, 1), 'animal': '犬', 'image': image_file.image.name}
+                else:
+                    context = {'result': round(result * 100, 1), 'animal': '猫', 'image': image_file.image.name}
+            except:
+                logger.debug("例外発生")
 
             return render(request, 'app/result.html', context)
         else:
