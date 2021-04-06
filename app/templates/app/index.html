@@ -1,5 +1,16 @@
 {% extends 'app/base.html' %}
 {% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <!--suppress ALL -->
+<div class="alert alert-success" role="alert">
+            <button class="close" data-dismiss="alert">
+                <small><sup>x</sup></small>
+            </button>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
 <h1>dags vs cats judgement AI</h1>
 <div class="preview_img">
     <img id="preview" src="/static/app/img/image_upload.png">

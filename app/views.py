@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from django.contrib import messages
 from django.shortcuts import render
 from django.utils import timezone
 
@@ -44,6 +45,7 @@ def contact(request):
         if form.is_valid():
             form.send_email()
             form = ImageFileForm()
+            messages.success(request, '問い合わせメールの送信が完了しました。')
             return render(request, 'app/index.html', {'form': form})
 
     return render(request, 'app/contact.html', {'form': form})
