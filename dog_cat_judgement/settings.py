@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.contrib.messages import constants as messages
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -170,3 +171,9 @@ SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r'^.+\.scss$'
 SASS_PRECISION = 8
 SASS_OUTPUT_STYLE = 'compact'
 SASS_TEMPLATE_EXTS = ['.html', '.haml']
+
+# messages
+MESSAGE_TAGS = {
+    messages.DEBUG: 'dark',
+    messages.ERROR: 'danger',
+}
