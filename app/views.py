@@ -31,24 +31,23 @@ def index(request):
 
             from app.judgement import judgement
             path = Path(MEDIA_ROOT) / image_file.image.name
-            context = {}
             try:
-                logger.debug("start judge dogs vs cats")
+                logger.debug("[start] judge dogs vs cats")
                 result = judgement(path)
-                logger.debug("end judge dogs vs cats")
+                logger.debug("[end] judge dogs vs cats")
                 if result < 0.5:
                     context = {'result': round(100 - result * 100, 1), 'animal': '犬', 'image': image_file.image.name}
                 else:
                     context = {'result': round(result * 100, 1), 'animal': '猫', 'image': image_file.image.name}
-            except:
-                logger.debug("judgement exception")
+            except Exception as e:
+                logger.debug("[exception] judgement error" + e.__class__.__name__)
                 messages.error(request, '判定に失敗しました。')
                 return render(request, 'app/index.html', {'form': form})
 
             return render(request, 'app/result.html', context)
         else:
             form = ImageFileForm()
-            logger.debug("form valid failure")
+            logger.debug("[failure] form valid")
             messages.warning(request, '画像ファイル(jpg, png, gif)を選択して下さい。')
             return render(request, 'app/index.html', {'form': form})
     else:

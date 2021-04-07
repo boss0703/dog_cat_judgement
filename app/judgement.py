@@ -25,7 +25,7 @@ def judgement(path):
     #     with session.graph.as_default():
     probs = np.array(model.predict_on_batch(x_test_preproc))
 
-    img_gen = ImageDataGenerator(
+    ImageDataGenerator(
         rescale=1. / 255,
         # shear_range=0.1,
         shear_range=0.2,
