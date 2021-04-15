@@ -1,1 +1,1 @@
-web: gunicorn dog_cat_judgement.wsgi --log-file - --preload --timeout 60 --max-requests 10 --max-requests-jitter 5
+web: gunicorn dog_cat_judgement.wsgi --log-file - --preload --timeout 120 --max-requests 5 --max-requests-jitter 2
