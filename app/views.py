@@ -6,7 +6,7 @@ from django.utils import timezone
 
 from app.forms import ImageFileForm, ContactForm
 from app.models import ImageFileModel
-from dog_cat_judgement.settings import MEDIA_ROOT
+from dog_cat_judgement.settings import MEDIA_ROOT, MAX_SIZE_UPLOAD
 
 from logging import getLogger, StreamHandler, DEBUG
 
@@ -22,6 +22,11 @@ def index(request):
     if request.method == 'POST':
         form = ImageFileForm(request.POST or None, request.FILES)
         if form.is_valid():
+            if request.FILES['image'].size > MAX_SIZE_UPLOAD:
+                logger.debug("[failure] over file size")
+                messages.warning(request, 'アップロード可能な画像ファイルの最大サイズは2MBです')
+                return render(request, 'app/index.html', {'form': form})
+
             image_file = ImageFileModel()
             image_file.image = request.FILES['image']
             image_file.published_date = timezone.now()

@@ -177,3 +177,6 @@ MESSAGE_TAGS = {
     messages.DEBUG: 'dark',
     messages.ERROR: 'danger',
 }
+
+# max image size 2mb
+MAX_SIZE_UPLOAD = (1000 ** 2) * 2

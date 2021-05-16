@@ -3,7 +3,8 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 
 from app.models import ImageFileModel
-from dog_cat_judgement import local_settings
+
+from dog_cat_judgement import settings
 
 
 class ImageFileForm(forms.ModelForm):
@@ -46,7 +47,11 @@ class ContactForm(forms.Form):
         name = self.cleaned_data['name']
         email = self.cleaned_data['email']
         from_email = '{name} <{email}>'.format(name=name, email=email)
-        recipient_list = [local_settings.EMAIL_HOST_USER]  # 受信者リスト
+        if settings.DEBUG:
+            from dog_cat_judgement import local_settings
+            recipient_list = [local_settings.EMAIL_HOST_USER]  # 受信者リスト
+        else:
+            recipient_list = [settings.EMAIL_HOST_USER]  # 受信者リスト
         try:
             send_mail(subject, message, from_email, recipient_list)
         except BadHeaderError:
