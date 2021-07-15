@@ -19,6 +19,25 @@ logger.propagate = False
 
 
 def index(request):
+    """
+    ビュー : ホームページ
+        POSTリクエストの場合
+            画像をサーバーにアップロードし、判別処理を行う
+            処理結果に応じて情報を設定し、HttpResponseを返却する
+        GETリクエストの場合
+            ホームページを表示する
+
+    Parameters
+    ----------
+    request : HttpRequest
+        ページに対するリクエスト
+
+    Returns
+    -------
+    HttpResponse
+        処理結果に応じたレスポンス
+
+    """
     if request.method == 'POST':
         form = ImageFileForm(request.POST or None, request.FILES)
         if form.is_valid():
@@ -61,6 +80,23 @@ def index(request):
 
 
 def contact(request):
+    """
+    ビュー : 問い合わせページ
+        POSTリクエストの場合
+            問い合わせの送信処理を行う
+            処理結果に応じて情報を設定し、HttpResponseを返却する
+
+    Parameters
+    ----------
+    request : HttpRequest
+        ページに対するリクエスト
+
+    Returns
+    -------
+    HttpResponse
+        処理結果に応じたレスポンス
+
+    """
     form = ContactForm()
     if request.method == 'POST':
         form = ContactForm(request.POST or None)

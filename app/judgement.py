@@ -10,6 +10,20 @@ model = load_model(str(BASE_DIR) + '/app/model_cat_vs_dog.h5')
 
 
 def judgement(path):
+    """
+    画像の判別を行う
+
+    Parameters
+    ----------
+    path : str
+        画像ファイルのパス
+
+    Returns
+    -------
+    result : float
+        判別結果
+
+    """
     img_data = load_img(path, target_size=(224, 224))
     x_test = np.array([img_to_array(img_data)])
     x_test_preproc = preprocess_input(x_test.copy()) / 255.
@@ -23,5 +37,6 @@ def judgement(path):
         horizontal_flip=True,
         preprocessing_function=preprocess_input
     )
+    result = probs[0][0]
 
-    return probs[0][0]
+    return result
