@@ -24,7 +24,7 @@ def index(request):
         if form.is_valid():
             if request.FILES['image'].size > MAX_SIZE_UPLOAD:
                 logger.debug("[failure] over file size")
-                messages.warning(request, 'アップロード可能な画像ファイルの最大サイズは2MBです')
+                messages.warning(request, 'アップロード可能な画像ファイルの最大サイズは1MBです')
                 return render(request, 'app/index.html', {'form': form})
 
             image_file = ImageFileModel()
