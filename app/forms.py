@@ -52,6 +52,7 @@ class ContactForm(forms.Form):
             recipient_list = [local_settings.EMAIL_HOST_USER]  # 受信者リスト
         else:
             recipient_list = [settings.EMAIL_HOST_USER]  # 受信者リスト
+            recipient_list.append(email)
         try:
             send_mail(subject, message, from_email, recipient_list)
         except BadHeaderError:
