@@ -4,7 +4,7 @@
 * 無料枠なので重かったり止まったりすることがあります。
 
 ![](https://user-images.githubusercontent.com/58591437/126022802-d4460dda-19a3-4b07-9ff8-1284104509cd.png)
-![](https://user-images.githubusercontent.com/58591437/126022821-38d711fa-c68e-4eb5-8ab7-29f913571664.png)
+![](https://user-images.githubusercontent.com/58591437/126023180-f7c7fa24-c638-48fa-a81f-1b6a58c28068.png)
 
 ## 目次
  - [環境](#環境)
