@@ -3,8 +3,8 @@
 * Herokuを利用して [こちら](https://dogcatjudgement.herokuapp.com/) で公開しています。
 * 無料枠なので重かったり止まったりすることがあります。
 
-![](https://user-images.githubusercontent.com/58591437/126022802-d4460dda-19a3-4b07-9ff8-1284104509cd.png)
-![](https://user-images.githubusercontent.com/58591437/126023180-f7c7fa24-c638-48fa-a81f-1b6a58c28068.png)
+![](https://user-images.githubusercontent.com/58591437/126023278-162d3124-f4b4-463c-83b8-5ad175977348.png)
+![](https://user-images.githubusercontent.com/58591437/126023291-b9b457ca-db77-4c9b-8314-18d9ece74aaa.png)
 
 ## 目次
  - [環境](#環境)
