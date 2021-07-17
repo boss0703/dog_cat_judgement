@@ -1,6 +1,6 @@
 # dog_cat_judgement
 * アップロードした画像が犬なのか猫なのか機械学習を利用して判別するサイトです。
-* Herokuを利用して [こちら]("https://dogcatjudgement.herokuapp.com/") で公開しています。
+* Herokuを利用して [こちら](https://dogcatjudgement.herokuapp.com/) で公開しています。
 * 無料枠なので重かったり止まったりすることがあります。
 
 ![](https://user-images.githubusercontent.com/58591437/126022802-d4460dda-19a3-4b07-9ff8-1284104509cd.png)
